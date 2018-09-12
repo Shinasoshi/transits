@@ -1,0 +1,6 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+blog:
+    resource: "@AppBundle/Controller/TransitController.php"
+    type:     annotation
