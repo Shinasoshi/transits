@@ -7,6 +7,8 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MapApi
 {
+    const API_KEY = 'DEBv2A23FcS3DVKMlOwTty9BNsOyQTG3';
+
     public function getDistance(array $locations)
     {
         $client = new Client(['base_uri' => 'https://open.mapquestapi.com/guidance/v2/route']);
@@ -18,7 +20,7 @@ class MapApi
 
             $data = $client->request('GET', '', [
                 'query' => [
-                    'key' => 'DEBv2A23FcS3DVKMlOwTty9BNsOyQTG3',
+                    'key' => self::API_KEY,
                     'from' => $locations[$x],
                     'to' => $locations[$x + 1],
                     'unit' => 'k'
